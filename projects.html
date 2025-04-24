@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Colorado López | Proyectos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Daniel Colorado López</a>
+            <button class="menu-toggle" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Sobre mí</a></li>
+                <li><a href="projects.html" class="active">Proyectos</a></li>
+                <li><a href="Favorites.html">Mis Favoritos</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <main class="projects-page">
+        <section class="projects-hero">
+            <div class="container">
+                <h1>Mis <span>Proyectos</span></h1>
+                <p>Conoce mi trabajo y las tecnologías que utilizo</p>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Proyecto 1 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="Resources/AluxIA.jpeg" alt="AluxIA" width="600" height="400">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                            <h3>Asesor Legal IA</h3>
+                            <p>Web app que brinda asesoramiento legal usando IA</p>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="Resources/Despacho.png" alt="Despacho Colorado" width="600" height="400">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">PHP</span>
+                                <span class="tag">Microsoft SQL Server</span>
+                            </div>
+                            <h3>Web de un despacho Legal</h3>
+                            <p>Web de un despacho legal enfocado a consultas y tramites.</p>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3 -->
+                    <div class="project-card" data-category="mobile">
+                        <div class="project-image">
+                            <img src="Resources/Creeme.jpeg" alt="Creeme App" width="600" height="400">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Kotlin + Jetpack Compose</span>
+                                <span class="tag">Python + Django/Flask</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">JWT</span>
+                            </div>
+                            <h3>App móvil de contabilidad</h3>
+                            <p>App móvil que busca simplificar cuestiones contables</p>
+                            <div class="project-links">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         
+        <div class="whatsapp-contact">
+            <a href="https://wa.me/2717020027" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Daniel Colorado López. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
