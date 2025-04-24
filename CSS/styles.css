@@ -145,6 +145,9 @@ body {
     .nav-links li {
         margin: 1.5rem 0;
     }
+    body {
+        padding-top: 80px; 
+      }
 }
 
 /* Sección Hero */
