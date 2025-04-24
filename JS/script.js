@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Navbar responsive toggle
+    const toggleButton = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (toggleButton && navLinks) {
+        toggleButton.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    }
+
     console.log("✅ projects.js cargado");
 
     const filterButtons = document.querySelectorAll('.filter-btn');
