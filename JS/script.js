@@ -1,29 +1,43 @@
-// script.js
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("✅ projects.js cargado");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
 
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+    console.log("Botones encontrados:", filterButtons.length);
+    console.log("Tarjetas encontradas:", projectCards.length);
+
+    if (filterButtons.length === 0 || projectCards.length === 0) {
+        console.warn("⚠️ No se encontraron los elementos. Revisa el HTML.");
+        return;
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
 
-    document.addEventListener("click", (e) => {
-        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-            navLinks.classList.remove("active");
-        }
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.15)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+        });
     });
 });
-const spotifyIframe = document.querySelector('.spotify-container iframe');
-if (spotifyIframe) {
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            spotifyIframe.src = spotifyIframe.dataset.src;
-            observer.unobserve(spotifyIframe);
-        }
-    });
-    
-    spotifyIframe.dataset.src = spotifyIframe.src;
-    spotifyIframe.removeAttribute('src');
-    observer.observe(spotifyIframe);
-}
